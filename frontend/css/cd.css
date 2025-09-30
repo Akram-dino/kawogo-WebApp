@@ -1,0 +1,228 @@
+/* body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: #f2f2f2;
+}
+
+input, button {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#prediction, #advice {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+
+
+
+:root {
+  --primary: #4CAF50;
+  --secondary: #2E7D32;
+  --light: #F1F8E9;
+  --dark: #1B5E20;
+  --error: #D32F2F;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: var(--dark);
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.green-text {
+  color: var(--primary);
+}
+
+.upload-area {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.upload-area:hover {
+  border-color: var(--primary);
+  background: var(--light);
+}
+
+.upload-area.active {
+  border-color: var(--primary);
+  background: var(--light);
+}
+
+#imagePreview, #cameraFeed {
+  max-width: 100%;
+  max-height: 300px;
+  margin: 20px auto;
+  display: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.camera-btn {
+  background-color: #f0da18;
+}
+
+.camera-btn:hover {
+  background-color: #4CAF50;
+}
+
+#captureBtn {
+  background-color: #FF5722;
+  display: none;
+}
+
+#captureBtn:hover {
+  background-color: #e64a19;
+}
+
+.results {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.result-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--primary);
+}
+
+.result-card h3 {
+  color: var(--dark);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-card p {
+  color: #555;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid var(--primary);
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  .upload-area {
+    padding: 30px 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+
+  .button-group, .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

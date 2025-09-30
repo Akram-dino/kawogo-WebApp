@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kawogo-Care | Detect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2216%22>🌿</text></svg>">
+  <link rel="stylesheet" href="css/cd.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <span class="green-text">Kawogo</span> Care
+    </h1>
+    
+    <div class="upload-area" id="uploadArea">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+      </svg>
+      <h3>Upload Cassava Leaf Image</h3>
+      <p>Drag & drop or click to select an image</p>
+      <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+      <div class="button-group">
+        <button class="btn" id="uploadBtn">Select Image</button>
+        <button class="btn camera-btn" id="cameraBtn">Use Camera</button>
+      </div>
+      <img id="imagePreview" alt="Preview">
+      <video id="cameraFeed" autoplay playsinline style="display: none;"></video>
+    </div>
+    
+    <div class="action-buttons">
+      <button class="btn" id="analyzeBtn" disabled>Detect Disease</button>
+      <button class="btn" id="captureBtn" style="display: none;">Capture Image</button>
+    </div>
+    
+    <div class="loading" id="loadingIndicator">
+      <div class="spinner"></div>
+      <p>Analyzing image...</p>
+    </div>
+    
+    <div class="results" id="results">
+      <div class="result-card" id="prediction" style="display: none;">
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+          Detection Result
+        </h3>
+        <p id="predictionText"></p>
+      </div>
+      
+      <div class="result-card" id="advice" style="display: none;">
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+          Farmer's Advice
+        </h3>
+        <p id="adviceText"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cd.js"></script>
+</body>
+</html>
